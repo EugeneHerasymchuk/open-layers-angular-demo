@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { View, Map } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import XYZ from 'ol/source/XYZ';
+import { MapService } from '../services/map/map.service';
 
 @Component({
   selector: 'app-map',
@@ -14,32 +13,9 @@ export class MapComponent implements OnInit {
   mapWidget!: ElementRef;
 
   mapInstance!: Map;
-
-  subscriptionKey = 'ImRQfoC5_nPc0SBcsdzKCj_j9-5NqmKmEgAMa8PbnAQ';
-
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
   ngOnInit(): void {
-    this.initMapInstance()
+    this.mapInstance = this.mapService.provideMapInstance(this.tilesetId);
   }
-
-  initMapInstance(): void {
-    this.mapInstance = new Map({
-      target: 'map',
-      layers: [new TileLayer({
-        source: new XYZ({
-          url: `https://atlas.microsoft.com/map/tile?subscription-key=${this.subscriptionKey
-            }&api-version=2.0&tilesetId=${this.tilesetId
-            }&zoom={z}&x={x}&y={y}&tileSize=256&language=en-US&view=Auto`,
-          attributions: `© ${new Date().getFullYear()} Architech`
-        })
-      })],
-      view: new View({
-        center: [0, 0],
-        zoom: 2
-      })
-    });
-    this.mapInstance.render()
-  }
-
 }
