@@ -10,6 +10,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { GiftComponent } from './components/gift/gift.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './modules/material/material.module';
+import { ConfigModule } from './modules/config/config.module';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { MaterialModule } from './modules/material/material.module';
     HomeComponent
   ],
   imports: [
+    ConfigModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,
