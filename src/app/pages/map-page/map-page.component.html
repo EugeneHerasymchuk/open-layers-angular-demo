@@ -1,6 +1,6 @@
-<div class="map" *ngIf="(gifts$ | async) as gifts; else loading">
-  <app-map [gifts]="gifts"></app-map>
-</div>
+<!-- <div class="map" *ngIf="(gifts$ | async) as gifts; else loading"> -->
+  <app-map></app-map>
+<!-- </div> -->
 
 <ng-template #loading>
   Loading gift list....
