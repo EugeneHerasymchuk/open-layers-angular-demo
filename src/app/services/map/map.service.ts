@@ -74,7 +74,7 @@ export class MapService {
       'icon': new Style({
         image: new Icon({
           anchor: [0.5, 1],
-          src: 'gift.png',
+          src: 'assets/gift.png'
         }),
       }),
       'geoMarker': new Style({
