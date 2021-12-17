@@ -1,4 +1,4 @@
-<div *ngIf="(gifts$ | async) as gifts; else loading">
+<div class="map" *ngIf="(gifts$ | async) as gifts; else loading">
   <app-map [gifts]="gifts"></app-map>
 </div>
 
