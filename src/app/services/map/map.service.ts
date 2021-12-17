@@ -14,7 +14,7 @@ import { Circle, Fill, Icon, Stroke, Style } from "ol/style";
 @Injectable({ providedIn: 'root' })
 export class MapService {
 
-  giftSource: VectorSource<Geometry>;
+  giftSource!: VectorSource<Geometry>;
 
   constructor(@Inject(APP_CONFIG) private config: AppConfig) {
   }
@@ -60,6 +60,7 @@ export class MapService {
 
 
   applyGiftsToMap(gifts: Gift[]) {
+    this.giftSource.refresh()
     gifts.forEach((gift => this.addGiftOnMap(gift)))
   }
 

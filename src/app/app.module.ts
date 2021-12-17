@@ -14,6 +14,7 @@ import { RequestFormComponent } from './components/request-form/request-form.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { MapPageComponent } from './pages/map-page/map-page.component';
 import { MapComponent } from './components/map/map.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MapComponent } from './components/map/map.component';
   ],
   imports: [
     ConfigModule,
+    HttpClientModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,

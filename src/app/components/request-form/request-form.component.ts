@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { APIService } from '../../services/api.service';
 
 @Component({
   selector: 'app-request-form',
@@ -15,12 +14,10 @@ export class RequestFormComponent implements OnInit {
     wish: new FormControl(''),
     present: new FormControl(''),
   });
-  constructor(private apiService: APIService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
   onSubmit(): void {
-    if (this.presentForm.valid)
-      this.apiService.requestPresent(this.presentForm.value)
   }
 }
