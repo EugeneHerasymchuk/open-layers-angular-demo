@@ -4,15 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MapComponent } from './components/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './components/layout/layout.component';
-import { GiftComponent } from './components/gift/gift.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './modules/material/material.module';
 import { ConfigModule } from './modules/config/config.module';
-import { MapPageComponent } from './pages/map-page/map-page.component';
 
+import { RequestFormComponent } from './components/request-form/request-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MapPageComponent } from './pages/map-page/map-page.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,8 @@ import { MapPageComponent } from './pages/map-page/map-page.component';
     MapComponent,
     MapPageComponent,
     LayoutComponent,
-    GiftComponent,
-    HomeComponent
+    HomeComponent,
+    RequestFormComponent
   ],
   imports: [
     ConfigModule,
@@ -29,7 +30,8 @@ import { MapPageComponent } from './pages/map-page/map-page.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

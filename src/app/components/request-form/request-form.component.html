@@ -1,0 +1,29 @@
+<div class="example-container">
+    <form [formGroup]="presentForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="fill" class="formElement">
+            <mat-label>Enter longitude</mat-label>
+            <input type="number" matInput placeholder="Enter lon" formControlName="lon" required>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field appearance="fill" class="formElement">
+            <mat-label>Enter latitude</mat-label>
+            <input type="number" matInput placeholder="Enter lat" formControlName="lat" required>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field appearance="fill" class="formElement">
+            <textarea matInput placeholder="Wishes" formControlName="wish"></textarea>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field appearance="fill" class="formElement">
+            <mat-label>Dream present</mat-label>
+            <mat-select required formControlName="present">
+                <mat-option value="car">Car</mat-option>
+                <mat-option selected value="doll">Doll</mat-option>
+                <mat-option value="teddy-bear">Teddy bear</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <button mat-raised-button color="accent" type="submit">Send</button>
+    </form>
+</div>
